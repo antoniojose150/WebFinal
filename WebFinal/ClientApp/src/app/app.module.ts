@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { PlaylistComponent } from './playlist/playlist.component';
+import { PlaylistDetailComponent } from './playlist-details/playlist-details.component';
+import { CancionesComponent } from './canciones/canciones.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { PlaylistComponent } from './playlist/playlist.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    PlaylistComponent
+    PlaylistComponent,
+    PlaylistDetailComponent,
+    CancionesComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -29,6 +33,8 @@ import { PlaylistComponent } from './playlist/playlist.component';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'playlist', component: PlaylistComponent },
+      { path: 'playlist/:playlistId', component: PlaylistDetailComponent },
+      { path: 'canciones/:playlistId', component: CancionesComponent },
     ])
   ],
   providers: [],

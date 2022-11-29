@@ -10,7 +10,6 @@
       <th>id</th>
       <th>name</th>
       <th>descripcion</th>
-      <th>canciones</th>
     </tr>
   </thead>
   <tbody>
@@ -18,7 +17,8 @@
       <td>{{ playlist.id }}</td>
       <td>{{ playlist.name }}</td>
       <td>{{ playlist.descripcion }}</td>
-      <td>{{ playlist.canciones }}</td>
+      <td><a [routerLink]="['/playlist', playlist.id]">modificar</a></td>
+      <td><a [routerLink]="['/canciones', playlist.id]">canciones</a></td>
     </tr>
   </tbody>
 </table>

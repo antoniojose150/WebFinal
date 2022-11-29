@@ -1,0 +1,24 @@
+<h1 id="tableLabel">Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!playlist"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="playlist">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>descripcion</th>
+      <th>canciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ playlist.id }}</td>
+      <td>{{ playlist.name }}</td>
+      <td>{{ playlist.descripcion }}</td>
+      <td *ngIf="playlist.canciones[0]">{{ playlist.canciones[0].name }}</td>
+    </tr>
+  </tbody>
+</table>

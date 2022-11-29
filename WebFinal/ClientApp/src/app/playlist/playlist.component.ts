@@ -19,7 +19,7 @@ export class PlaylistComponent {
 interface Playlist {
   id: number;
   name: number;
-  descripcion: number;
+  descripcion: string;
   canciones: Cancion[];
 }
 
