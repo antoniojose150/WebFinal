@@ -39,7 +39,7 @@ namespace WebFinal.Controllers
         }
 
         [HttpGet("{cancionId}", Name ="GetCancion")]
-        public async Task<ActionResult<IEnumerable<CancionDto>>> GetCancion(int playlistId,int cancionId)
+        public async Task<ActionResult<CancionDto>> GetCancion(int playlistId,int cancionId)
         {
 
             if (!await _playlistRepository.PlaylistExistAsync(playlistId))
@@ -47,10 +47,10 @@ namespace WebFinal.Controllers
                 return NotFound();
             }
 
-            var cancionEntity = await _playlistRepository.GetCanciones(playlistId);
+            var cancionEntity = await _playlistRepository.GetCancion(playlistId,cancionId);
 
 
-            return Ok(_mapper.Map<IEnumerable<CancionDto>>(cancionEntity));
+            return Ok(_mapper.Map<CancionDto>(cancionEntity));
 
         }
 

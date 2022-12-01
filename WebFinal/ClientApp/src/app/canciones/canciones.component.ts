@@ -8,18 +8,18 @@ import { ActivatedRoute } from '@angular/router';
 export class CancionesComponent implements OnInit {
 
   public canciones: Cancion[] = [];
+  public playlistId: number | undefined;
 
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string, private route: ActivatedRoute) {}
 
 
   ngOnInit(): void {
-    const playlistId = Number(this.route.snapshot.paramMap.get('playlistId'));
+    this.playlistId = Number(this.route.snapshot.paramMap.get('playlistId'));
 
-    this.http.get<Cancion[]>(this.baseUrl + 'api/playlist/' + playlistId + '/cancion').subscribe(result => {
+    this.http.get<Cancion[]>(this.baseUrl + 'api/playlist/' + this.playlistId + '/cancion').subscribe(result => {
       this.canciones = result;
       console.log(result);
     }, error => console.error(error));
-
 
   }
 

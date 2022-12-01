@@ -12,6 +12,8 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { PlaylistComponent } from './playlist/playlist.component';
 import { PlaylistDetailComponent } from './playlist-details/playlist-details.component';
 import { CancionesComponent } from './canciones/canciones.component';
+import { CancionesDetailsComponent } from './canciones-details/canciones-details.component';
+import { ContactoComponent } from './contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { CancionesComponent } from './canciones/canciones.component';
     FetchDataComponent,
     PlaylistComponent,
     PlaylistDetailComponent,
-    CancionesComponent
+    CancionesComponent,
+    CancionesDetailsComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -35,6 +39,8 @@ import { CancionesComponent } from './canciones/canciones.component';
       { path: 'playlist', component: PlaylistComponent },
       { path: 'playlist/:playlistId', component: PlaylistDetailComponent },
       { path: 'canciones/:playlistId', component: CancionesComponent },
+      { path: 'cancion/detalles/:playlistId/:cancionId', component: CancionesDetailsComponent },
+      { path: 'contacto', component: ContactoComponent }
     ])
   ],
   providers: [],

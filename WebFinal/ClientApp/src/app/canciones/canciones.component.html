@@ -18,6 +18,7 @@
       <td>{{ cancion.id }}</td>
       <td>{{ cancion.name }}</td>
       <td>{{ cancion.descripcion }}</td>
+      <td><a [routerLink]="['/cancion/detalles/', playlistId,cancion.id]">detalles</a></td>
     </tr>
   </tbody>
 </table>

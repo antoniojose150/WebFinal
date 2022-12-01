@@ -12,6 +12,7 @@ namespace WebFinal.Profiles
             CreateMap<Models.Dtos.CancionFroCreationDto, Models.Cancion>();
             CreateMap<Models.Cancion, Models.Dtos.CancionUpdateDto>();
             CreateMap<Models.Dtos.CancionUpdateDto, Models.Cancion>();
+            CreateMap<Models.Dtos.CancionDto, Models.Cancion>();
         }
     }
 }

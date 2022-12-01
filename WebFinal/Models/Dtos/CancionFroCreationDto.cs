@@ -5,7 +5,7 @@ namespace WebFinal.Models.Dtos
     public class CancionFroCreationDto
     {
 
-        public string Name { get; set; } = String.Empty;
+        public string Name { get; set; } = string.Empty;
 
         public string? Descripcion { get; set; }
 
