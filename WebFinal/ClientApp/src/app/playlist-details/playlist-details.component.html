@@ -19,6 +19,7 @@
       <td>{{ playlist.name }}</td>
       <td>{{ playlist.descripcion }}</td>
       <td *ngIf="playlist.canciones[0]">{{ playlist.canciones[0].name }}</td>
+      <td><a [routerLink]="['/canciones', playlist.id]">detalles canciones</a></td>
     </tr>
   </tbody>
 </table>
